@@ -47,7 +47,7 @@ def set_hash(file):
 
 
 def reset():
-    browse_l['text'] = ''
+    browse_label['text'] = ''
     md5_label['text'] = ''
     sha1_label['text'] = ''
     sha256_label['text'] = ''
@@ -71,9 +71,9 @@ def verify():
             messagebox.showinfo(
                 "Info", name + " hash matched!\nFile is original.")
             return
-    statusbar['text'] = "No Hash matched. File is not original !"
+    statusbar['text'] = "No hash matched. File is not original !"
     statusbar['bg'] = 'tan1'
-    messagebox.showwarning("Info", "No Hash matched.\nFile is not original!")
+    messagebox.showwarning("Info", "No hash matched.\nFile is not original!")
 
 
 #-------------------Heading and statusbar-----------------------#
@@ -119,25 +119,6 @@ for name in ['File:', 'MD5:', 'SHA-1:', 'SHA-256:', 'SHA-512:']:
     _.pack(padx=20, pady=0, fill=tk.X)
 left_frame.pack(side=tk.LEFT, fill=tk.X)
 
-#---------------------------MID FRAME--------------------------#
-mid_frame = tk.Frame(root, bg='white')
-browse_label = tk.Label(mid_frame, width=10, font="15", bg='ghost white',
-                        padx=15, pady=2, relief='sunken')
-browse_label.pack(pady=20, fill=tk.X)
-md5_label = tk.Label(mid_frame, width=10, font="Arial 10", bg='ghost white',
-                     padx=15, pady=2, relief='sunken')
-md5_label.pack(pady=20, fill=tk.X)
-sha1_label = tk.Label(mid_frame, width=10, font="Arial 10", bg='ghost white',
-                      padx=15, pady=2, relief='sunken')
-sha1_label.pack(pady=20, fill=tk.X)
-sha256_label = tk.Label(mid_frame, width=10, font="Arial 10", bg='ghost white',
-                        padx=15, pady=2, relief='sunken')
-sha256_label.pack(pady=20, fill=tk.X)
-sha512_label = tk.Label(mid_frame, font="Arial 10", bg='ghost white',
-                        padx=15, pady=2, relief='sunken')
-sha512_label.pack(pady=20, fill=tk.X)
-mid_frame.pack(side=tk.LEFT, fill=tk.X, expand=1)
-
 #-------------------------RIGHT FRAME-------------------------#
 right_frame = tk.Frame(root, bg='white')
 browse_button = ttk.Button(right_frame, text='Browse',
@@ -156,6 +137,25 @@ sha512_button = ttk.Button(right_frame, text='Copy SHA-512',
                            command=lambda: cb.copy(sha512_label['text']))
 sha512_button.pack(pady=19)
 right_frame.pack(padx=20, side=tk.RIGHT)
+
+#---------------------------MID FRAME--------------------------#
+mid_frame = tk.Frame(root, bg='white')
+browse_label = tk.Label(mid_frame, width=10, font="15", bg='ghost white',
+                        padx=15, pady=2, relief='sunken')
+browse_label.pack(pady=20, fill=tk.X)
+md5_label = tk.Label(mid_frame, width=10, font="Arial 10", bg='ghost white',
+                     padx=15, pady=2, relief='sunken')
+md5_label.pack(pady=20, fill=tk.X)
+sha1_label = tk.Label(mid_frame, width=10, font="Arial 10", bg='ghost white',
+                      padx=15, pady=2, relief='sunken')
+sha1_label.pack(pady=20, fill=tk.X)
+sha256_label = tk.Label(mid_frame, width=10, font="Arial 10", bg='ghost white',
+                        padx=15, pady=2, relief='sunken')
+sha256_label.pack(pady=20, fill=tk.X)
+sha512_label = tk.Label(mid_frame, font="Arial 10", bg='ghost white',
+                        padx=15, pady=2, relief='sunken')
+sha512_label.pack(pady=20, fill=tk.X)
+mid_frame.pack(side=tk.LEFT, fill=tk.X, expand=1)
 
 
 root.mainloop()
