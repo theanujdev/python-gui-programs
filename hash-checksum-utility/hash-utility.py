@@ -57,4 +57,31 @@ paste_button.pack(padx=20, pady=0, side=tk.RIGHT)
 
 bottom_frame.pack(side=tk.BOTTOM, fill=tk.X, expand=1)
 
+#------------------LEFT FRAME-------------------#
+left_frame = tk.Frame(root, bg='white')
+for name in ['File:', 'MD5:', 'SHA-1:', 'SHA-256:', 'SHA-512:']:
+    _ = tk.Label(left_frame, text=name, bg='white', font="Helvetica 15",
+                 fg='purple3', anchor='e',  pady=18)
+    _.pack(padx=20, pady=0, fill=tk.X)
+left_frame.pack(side=tk.LEFT, fill=tk.X)
+
+#------------------MID FRAME-------------------#
+mid_frame = tk.Frame(root, bg='white')
+browse_label = tk.Label(mid_frame, width=10, font="15", bg='ghost white',
+                        padx=15, pady=2, relief='sunken')
+browse_label.pack(pady=20, fill=tk.X)
+md5_label = tk.Label(mid_frame, width=10, font="Arial 10", bg='ghost white',
+                     padx=15, pady=2, relief='sunken')
+md5_label.pack(pady=20, fill=tk.X)
+sha1_label = tk.Label(mid_frame, width=10, font="Arial 10", bg='ghost white',
+                      padx=15, pady=2, relief='sunken')
+sha1_label.pack(pady=20, fill=tk.X)
+sha256_label = tk.Label(mid_frame, width=10, font="Arial 10", bg='ghost white',
+                        padx=15, pady=2, relief='sunken')
+sha256_label.pack(pady=20, fill=tk.X)
+sha512_label = tk.Label(mid_frame, font="Arial 10", bg='ghost white',
+                        padx=15, pady=2, relief='sunken')
+sha512_label.pack(pady=20, fill=tk.X)
+mid_frame.pack(side=tk.LEFT, fill=tk.X, expand=1)
+
 root.mainloop()
